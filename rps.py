@@ -3,11 +3,11 @@ import os
 wdtgs = ["anan", "rock", "scissors", "paper"]
 while (1):
     print("""
-##############
-Rock = 1\n
-Paper= 2\n
-Scissors = 3\n
-##############\n\n""")
+##################
+# Rock = 1       #\n
+# Paper = 2      #\n 
+# Scissors = 3   #\n 
+##################\n\n""")
     try:
         selection = int(input("Select 1, 2 or 3: "))
     except ValueError:
