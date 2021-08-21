@@ -1,6 +1,6 @@
 from random import randrange
 import os
-wdtgs = ["anan", "rock", "scissors", "paper"]
+wdtgs = ["rock", "scissors", "paper"]
 while (1):
     print("""
 ##################
@@ -10,13 +10,14 @@ while (1):
 ##################\n\n""")
     try:
         selection = int(input("Select 1, 2 or 3: "))
+        selection -= 1
     except ValueError:
         os.system('cls' if os.name == 'nt' else 'clear')
         print("\n\nOnly numbers pls")
     else: 
-        if (selection <= 3 or selection >= 1):
+        if (selection <= 2 or selection >= 0):
             while (1):
-                gselection = randrange(1,4)
+                gselection = randrange(0,3)
                 try:
                     usaid = wdtgs[selection]
                 except IndexError:
@@ -39,18 +40,16 @@ while (1):
                         exit(0)
                     else:
                         break 
-                if ((gselection == 3 and selection == 1) or (gselection == 2 and selection == 3) or (gselection == 1 and selection == 2)):
+                if ((gselection == 2 and selection == 0) or (gselection == 1 and selection == 2) or (gselection == 0 and selection == 1)):
                     print("\nYou LOSE !!!!!\n\n\n")
-                    selection = 0
                     a = input("Press enter to try again, q to quit...")
                     os.system('cls' if os.name == 'nt' else 'clear')
                     if a == "q":
                         exit(0)
                     else:
                         break
-                if ((gselection == 1 and selection == 3) or (gselection == 3 and selection == 2) or (gselection == 2 and selection == 1)):
+                if ((gselection == 0 and selection == 2) or (gselection == 2 and selection == 1) or (gselection == 1 and selection == 0)):
                     print("\nYou WIN !!!!!\n\n\n")
-                    selection = 0
                     a = input("Press enter to try again, q to quit...")
                     os.system('cls' if os.name == 'nt' else 'clear')
                     if a == "q":
